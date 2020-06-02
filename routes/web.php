@@ -49,4 +49,13 @@ $router->group(['prefix' => 'api'], function () use ($router) {
  
      // delete book
      $router->get('/delete-book/{id}', 'BookController@delete');
+
+     // get all categories
+     $router->get('/get-categories', 'CategoryController@getCategories');
+
+     // get all books
+     $router->get('/get-books', 'BookController@getBooks');
+
+     // get books based on categories
+     $router->get('/get-category-books/{id}', 'BookController@getCategoryBooks');
  });

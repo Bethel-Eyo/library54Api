@@ -50,4 +50,13 @@ class BookRepository extends BaseRepository{
             return response()->json(['message' => $e], 409);
           }
     }
+
+    public function getBooks(){
+        return response()->json(['books' =>  Book::paginate(5)], 200);
+    }
+
+    public function getCategoryBooks($id){
+        $books = $this->findBy('cat_id', $id)->get();
+        return response()->json(['books' =>  $books], 200);
+    }
 }

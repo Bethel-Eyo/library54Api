@@ -23,4 +23,12 @@ class BookController extends Controller {
     public function delete($id){
         return $this->bookRepo->deleteBook($id);
     }
+
+    public function getBooks(){
+        return $this->bookRepo->getBooks();
+    }
+
+    public function getCategoryBooks($id){
+        return $this->bookRepo->getCategoryBooks($id);
+    }
 }
