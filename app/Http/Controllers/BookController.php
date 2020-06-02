@@ -9,6 +9,7 @@ class BookController extends Controller {
 
     public function __construct(BookRepository $bookRepo)
     {
+        $this->middleware('auth');
       $this->bookRepo = $bookRepo;
     }
 
