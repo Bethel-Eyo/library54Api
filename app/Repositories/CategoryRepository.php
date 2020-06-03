@@ -51,6 +51,6 @@ class CategoryRepository extends BaseRepository{
     }
 
     public function getCategories(){
-        return response()->json(['categories' =>  Cat::paginate(5)], 200);
+        return response()->json(['categories' =>  Cat::all()], 200);
     }
 }

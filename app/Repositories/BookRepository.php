@@ -52,11 +52,11 @@ class BookRepository extends BaseRepository{
     }
 
     public function getBooks(){
-        return response()->json(['books' =>  Book::paginate(5)], 200);
+        return response()->json(['books' =>  Book::all()], 200);
     }
 
     public function getCategoryBooks($id){
-        $books = $this->findBy('cat_id', $id)->get();
+        $books = Book::where('cat_id', $id)->get();
         return response()->json(['books' =>  $books], 200);
     }
 }
